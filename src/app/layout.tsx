@@ -2,9 +2,7 @@ import type { Metadata } from "next"
 import "./globals.css"
 import { GeistMono } from "geist/font/mono"
 import { GeistSans } from "geist/font/sans"
-
-const geistMono = GeistMono
-const geistSans = GeistSans
+import Header from "./components/Header"
 
 export const metadata: Metadata = {
   title: "rajanavadhane.dev",
@@ -21,9 +19,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`bg-bg-primary ${geistMono.variable} ${geistSans.variable}`}
+      className={`bg-bg-primary ${GeistMono.variable} ${GeistSans.variable}`}
     >
-      <body>{children}</body>
+      <body className="flex min-h-screen flex-col font-sans md:max-w-7xl lg:mx-auto lg:flex-row">
+        <main>
+          <Header />
+        </main>
+
+        {children}
+      </body>
     </html>
   )
 }
