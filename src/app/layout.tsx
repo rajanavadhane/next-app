@@ -6,6 +6,7 @@ import Header from "./components/Header"
 import "./globals.css"
 import { BgGradient } from "./components/BgGradient"
 import { Footer } from "./components/Footer"
+import Script from "next/script"
 
 export const metadata: Metadata = {
   title: "rajanavadhane.dev",
@@ -39,6 +40,18 @@ export default function RootLayout({
           <Footer />
         </main>
       </body>
+      <Script id="vemetric-loader" strategy="afterInteractive">
+        {`
+          window.vmtrcq = window.vmtrcq || [];
+          window.vmtrc = window.vmtrc || ((...args) => window.vmtrcq.push(args));
+        `}
+      </Script>
+
+      <Script
+        src="https://cdn.vemetric.com/main.js"
+        data-token="HUO9AbX53v2wkzRu"
+        strategy="afterInteractive"
+      />
     </html>
   )
 }
