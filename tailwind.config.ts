@@ -1,8 +1,14 @@
+/** @type {import('tailwindcss').Config} */
 import type { Config } from "tailwindcss"
 import colors from "tailwindcss/colors"
 
-export default {
-  content: ["./app/**/*.{ts,tsx}", "./content/**/*.mdx", "./public/**/*.svg"],
+const config: Config = {
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/content/**/*.mdx",
+    "./public/**/*.svg",
+  ],
   theme: {
     extend: {
       boxShadow: {
@@ -10,7 +16,7 @@ export default {
           "0 0 0 1px rgba(14, 22, 34, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.06)",
       },
       fontFamily: {
-        sans: "var(--font-geist-sans), system-ui, sans-serif",
+        sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
         mono: ["var(--font-geist-mono)"],
       },
       colors: {
@@ -30,9 +36,6 @@ export default {
             "blockquote p:first-of-type::after": { content: "none" },
           },
         },
-        h1: {
-          colors: "text-secondary",
-        },
       },
       animation: {
         "spin-slow": "spin 14s linear infinite",
@@ -42,5 +45,9 @@ export default {
   future: {
     hoverOnlyWhenSupported: true,
   },
-  plugins: [],
-} satisfies Config
+  plugins: [
+    require("@tailwindcss/typography"), // add if using `typography`
+  ],
+}
+
+export default config
