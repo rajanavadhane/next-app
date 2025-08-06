@@ -1,77 +1,187 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import Navbar from "app/components/Navbar";
-import { siteMetadata } from "app/data/siteMetadata";
-import { Footer } from "./components/Footer";
 import { BgGradient } from "./components/BgGradient";
-import { cx } from "./lib/utils";
-import { GeistMono } from "geist/font/mono";
-import { GeistSans } from "geist/font/sans";
-import Script from "next/script";
+import { NewsletterSignUp } from "./components/NewsletterSignUp";
+import { ChangelogBento } from "./components/ChangelogBento";
+import { fetchAndSortBlogPosts } from "./lib/utils";
+import { SpeakingBento } from "./components/SpeakingBento";
+import { CommunityWallBento } from "./components/CommunityWallBento";
+import { CalendarBento } from "./components/CalendarBento";
+import { FeaturedBlogCard } from "./components/FeaturedBlogCard";
+import { ToolboxBento } from "./components/ToolboxBento";
+import { ConnectionsBento } from "./components/ConnectionsBento";
+import { AnimatedProfilePicture } from "./components/AnimatedProfilePicture";
+import { AnimatedText } from "./components/AnimatedText";
+import { PhotoGallery } from "./components/PhotoGallery";
+import { AboutMeBento } from "./components/AboutMeBento";
+import { AnimatedMobilePhotos } from "./components/AnimatedMobilePhotos";
+import { GridWrapper } from "./components/GridWrapper";
+import clsx from "clsx";
 
-export const metadata: Metadata = {
-  description: siteMetadata.description,
-  openGraph: {
-    title: siteMetadata.title,
-    description: siteMetadata.description,
-    images: [
-      {
-        url: "/braydon_coyer_blogfolio_og.jpg", // Your default OG image
-        width: 1200,
-        height: 630,
-        alt: siteMetadata.title,
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: siteMetadata.title,
-    description: siteMetadata.description,
-    images: ["/braydon_coyer_blogfolio_og.jpg"],
-  },
-};
+export default async function Home() {
+  const allPublishedBlogPosts = await fetchAndSortBlogPosts();
+  const featuredArticles = allPublishedBlogPosts.slice(0, 4);
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+  const PROFILE_DELAY = 0;
+  const HEADING_DELAY = PROFILE_DELAY + 0.2;
+  const PARAGRAPH_DELAY = HEADING_DELAY + 0.1;
+  const PHOTOS_DELAY = PARAGRAPH_DELAY + 0.1;
+
   return (
-    <html
-      lang="en"
-      className={`bg-bg-primary ${GeistMono.variable} ${GeistSans.variable}`}
-    >
-      <body className="flex min-h-screen flex-col font-sans md:max-w-7xl lg:mx-auto lg:flex-row">
-        <main
-          className={cx(
-            "relative flex flex-1 flex-col overflow-x-hidden border-x border-border-primary/50",
-          )}
-        >
-          <Navbar />
-          <div className="grid flex-1 grid-cols-1 lg:grid-cols-[32px_1fr_32px]">
-            <div className="hidden w-full border-r border-border-primary opacity-75 [background-image:linear-gradient(45deg,theme(colors.border-primary)_12.50%,transparent_12.50%,transparent_50%,theme(colors.border-primary)_50%,theme(colors.border-primary)_62.50%,transparent_62.50%,transparent_100%)] [background-size:5px_5px] lg:block"></div>
-            <div className="relative col-span-1 px-3 lg:px-0">
-              <BgGradient />
-              {children}
-            </div>
-            <div className="hidden w-full border-l border-border-primary opacity-75 [background-image:linear-gradient(45deg,theme(colors.border-primary)_12.50%,transparent_12.50%,transparent_50%,theme(colors.border-primary)_50%,theme(colors.border-primary)_62.50%,transparent_62.50%,transparent_100%)] [background-size:5px_5px] lg:block"></div>
+    <section>
+      <AnimatedProfilePicture delay={PROFILE_DELAY} />
+      <div className="mt-6 space-y-10 md:mt-0 md:space-y-16">
+        <section>
+          <div className="relative text-balance">
+            <GridWrapper>
+              <AnimatedText
+                as="h1"
+                delay={HEADING_DELAY}
+                className="mx-auto max-w-2xl text-center text-4xl font-medium leading-tight tracking-tighter text-text-primary md:text-6xl md:leading-[64px]"
+              >
+                Hey, I&apos;m Braydon! <br /> Welcome to my corner of the
+                internet!
+              </AnimatedText>
+            </GridWrapper>
+            <GridWrapper>
+              <div className="mt-4 text-center md:mt-8">
+                <AnimatedText
+                  as="p"
+                  delay={PARAGRAPH_DELAY}
+                  className="leading-8 text-text-secondary"
+                >
+                  I&apos;m a front-end developer with a love for design and a
+                  knack for tinkering. This site is intentionally
+                  over-engineered and serves as my playground for experimenting
+                  with new ideas and seeing what sticks!
+                </AnimatedText>
+              </div>
+            </GridWrapper>
           </div>
-          <Footer />
-        </main>
-      </body>
+          <div>
+            {/* Desktop Photos */}
+            <div className="relative hidden h-fit w-full items-center justify-center lg:flex">
+              <PhotoGallery animationDelay={PHOTOS_DELAY} />
+            </div>
 
-      <Script id="vemetric-loader" strategy="afterInteractive">
-        {`
-          window.vmtrcq = window.vmtrcq || [];
-          window.vmtrc = window.vmtrc || ((...args) => window.vmtrcq.push(args));
-        `}
-      </Script>
+            {/* Mobile Photos */}
+            <AnimatedMobilePhotos delay={PHOTOS_DELAY} />
+          </div>
+        </section>
 
-      <Script
-        src="https://cdn.vemetric.com/main.js"
-        data-token="HUO9AbX53v2wkzRu"
-        strategy="afterInteractive"
-      />
-    </html>
+        {/* About Section */}
+        <section className="relative space-y-10 md:space-y-16">
+          {/* <AboutPattern /> */}
+          <div className="space-y-4">
+            <GridWrapper>
+              <div className="text-center text-sm font-medium text-indigo-600">
+                <span>About</span>
+              </div>
+            </GridWrapper>
+            <GridWrapper>
+              <h2 className="mx-auto max-w-lg text-balance text-center text-3xl font-medium leading-10 tracking-tight text-text-primary md:text-4xl">
+                Here&apos;s what sets me apart and makes me unique
+              </h2>
+            </GridWrapper>
+          </div>
+
+          <GridWrapper>
+            <div className="grid grid-cols-1 gap-2 md:grid-cols-12 lg:grid-rows-[14]">
+              <div className="col-span-1 md:col-span-5 lg:col-span-5 lg:row-span-6">
+                <AboutMeBento linkTo="/about" />
+              </div>
+
+              <div className="md:col-span-12 lg:col-span-7 lg:row-span-8">
+                <ConnectionsBento linkTo="/connections" />
+              </div>
+
+              <div className="md:col-span-7 md:row-start-1 lg:col-span-5 lg:row-span-7">
+                <ToolboxBento linkTo="/toolbox" />
+              </div>
+
+              <div className="md:col-span-12 lg:col-span-7 lg:row-span-5">
+                <CalendarBento />
+              </div>
+            </div>
+          </GridWrapper>
+        </section>
+
+        {/* Blog Section */}
+        <section className="relative space-y-10 md:space-y-16">
+          {/* <BlogPattern /> */}
+          <div className="relative space-y-4 text-balance">
+            <span className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2">
+              <BgGradient />
+            </span>
+            <GridWrapper>
+              <div className="text-center text-sm font-medium text-indigo-600">
+                <span>Blog</span>
+              </div>
+            </GridWrapper>
+            <GridWrapper>
+              <h2 className="mx-auto max-w-lg text-center text-3xl font-medium leading-10 tracking-tighter text-text-primary md:text-4xl">
+                I like sharing my experiments && knowledge with others
+              </h2>
+            </GridWrapper>
+          </div>
+
+          <div className="z-10">
+            <GridWrapper>
+              <ul className="z-50 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
+                {featuredArticles.length > 0 ? (
+                  <>
+                    {featuredArticles.slice(0, 4).map((post, index) => (
+                      <FeaturedBlogCard
+                        key={post.slug}
+                        slug={post.slug}
+                        imageName={post.imageName}
+                        title={post.title}
+                        summary={post.summary}
+                        className={clsx(
+                          // Hide the fourth article on mobile and desktop
+                          index === 3 && "hidden md:block lg:hidden",
+                        )}
+                      />
+                    ))}
+                  </>
+                ) : (
+                  <p>Nothing to see here yet...</p>
+                )}
+              </ul>
+            </GridWrapper>
+          </div>
+        </section>
+
+        {/* My Site Section */}
+        <section className="relative space-y-10 md:space-y-16">
+          {/* <MySitePattern /> */}
+          <div className="space-y-4 text-balance">
+            <GridWrapper>
+              <div className="text-center text-sm font-medium text-indigo-600">
+                <span>My Site</span>
+              </div>
+            </GridWrapper>
+            <GridWrapper>
+              <h2 className="text-center text-3xl font-medium leading-10 tracking-tighter text-text-primary md:mx-auto md:max-w-lg md:text-4xl">
+                My site is a playful sandbox. Explore, experiment, && say hello
+              </h2>
+            </GridWrapper>
+          </div>
+
+          <GridWrapper>
+            <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
+              <span className="col-span-1 h-[276px] sm:block md:hidden lg:block">
+                <ChangelogBento />
+              </span>
+              <SpeakingBento />
+              <CommunityWallBento />
+            </div>
+          </GridWrapper>
+        </section>
+
+        {/* Newsletter Section */}
+        <section>
+          <NewsletterSignUp />
+        </section>
+      </div>
+    </section>
   );
 }
