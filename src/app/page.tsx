@@ -35,10 +35,13 @@ export default async function Home() {
                   delay={PARAGRAPH_DELAY}
                   className="leading-8 text-text-secondary"
                 >
-                  I&apos;m a front-end developer with a love for design and a
-                  knack for tinkering. This site is intentionally
-                  over-engineered and serves as my playground for experimenting
-                  with new ideas and seeing what sticks!
+                  I&apos;m a front-end developer with a habit of pushing pixels
+                  and breaking things—lovingly. This site is where I test ideas,
+                  collect inspiration, and build without a roadmap. If something
+                  looks off... it's probably a feature, not a bug. This isn’t
+                  just a portfolio—it’s a code lab, a journal, and a
+                  never-ending commit history. Things get updated, undone, and
+                  sometimes overengineered for no reason other than fun.
                 </AnimatedText>
               </div>
             </GridWrapper>

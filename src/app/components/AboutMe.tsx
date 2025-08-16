@@ -1,16 +1,12 @@
-// import { getTimeOfDayGreeting } from "../lib/utils";
 import { MyCard } from "./MyCard"
 
 export function AboutMe({ linkTo }: { linkTo?: string }) {
-  // const timeOfDayGreeting = getTimeOfDayGreeting()
-
   return (
     <MyCard height="h-[275px] md:h-[304px] lg:h-[220px]" linkTo={linkTo}>
       <div className="group flex h-full">
         <div className="text-balance">
           <h2 className="mb-4 text-base font-medium">Learn more about me</h2>
           <p className="mb-2 text-balance pr-1 text-text-secondary md:pr-4">
-            {/* {timeOfDayGreeting} <br /> */}
             I&apos;m Rajan, an experienced front-end developer.
           </p>
         </div>

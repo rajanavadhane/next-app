@@ -100,13 +100,13 @@ export function Connections({ linkTo }: { linkTo?: string }): React.ReactNode {
           </span>
 
           <span className="hidden md:block">
-            {/* Yoshita */}
+            {/* harry  */}
             <AnimatedConnectionCircle
-              src="/yoshita-jain.jpg"
-              top="55%"
-              left="23%"
-              delay={0.1}
-              sizeClass="w-12 h-12"
+              src="/harry.jpeg"
+              top="5%"
+              left="7%"
+              delay={0.5}
+              sizeClass="w-9 h-9"
               controls={controls}
             />
 
@@ -131,7 +131,7 @@ export function Connections({ linkTo }: { linkTo?: string }): React.ReactNode {
 
             {/* hitesh */}
             <AnimatedConnectionCircle
-              src="/hitesh.avif"
+              src="/david-malan.jpeg"
               top="15%"
               left="78%"
               delay={0.4}
@@ -139,13 +139,13 @@ export function Connections({ linkTo }: { linkTo?: string }): React.ReactNode {
               controls={controls}
             />
 
-            {/* jack herrington */}
+            {/* Yoshita */}
             <AnimatedConnectionCircle
-              src="/jack-herrington.jpeg"
-              top="5%"
-              left="7%"
-              delay={0.5}
-              sizeClass="w-9 h-9"
+              src="/yoshita-jain.jpg"
+              top="55%"
+              left="23%"
+              delay={0.1}
+              sizeClass="w-12 h-12"
               controls={controls}
             />
           </span>
@@ -158,7 +158,7 @@ export function Connections({ linkTo }: { linkTo?: string }): React.ReactNode {
             >
               <img
                 className="rounded-full"
-                src="/shashi_lo.jpg"
+                src="/hitesh.avif"
                 alt="Connection"
               />
             </ConnectionCircle>
@@ -168,7 +168,7 @@ export function Connections({ linkTo }: { linkTo?: string }): React.ReactNode {
             >
               <img
                 className="rounded-full"
-                src="/amy_dutton.jpg"
+                src="/harry.jpeg"
                 alt="Connection"
               />
             </ConnectionCircle>
