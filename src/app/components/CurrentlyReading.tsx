@@ -17,13 +17,14 @@ export function CurrentlyReading() {
 
 function BookCover() {
   return (
-    <div className="relative aspect-video h-full w-96 overflow-hidden rounded bg-red-500">
+    <div className="flex aspect-video h-full w-96 overflow-hidden rounded">
       <div className="absolute left-5 h-full w-2 bg-slate-900/20 blur-sm"></div>
       <img
         src="/the_immortals_of_meluha.jpg"
         alt="The Immortals of Meluha"
-        className="h-full"
+        className="h-full w-[50%] "
       />
+      <img src="/the_nagas.jpg" alt="The Nagas" className="h-full w-[50%]" />
     </div>
   )
 }

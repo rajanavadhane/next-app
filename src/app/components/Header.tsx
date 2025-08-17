@@ -35,7 +35,7 @@ function DesktopNav() {
 
   return (
     <nav
-      className="hidden h-16 w-full items-center justify-between border-border-primary/50 px-4 md:flex"
+      className="hidden h-16 w-full items-center justify-between border-b border-border-primary/50 px-4 md:flex"
       aria-label="Desktop navigation"
     >
       <div className="w-[104px]">

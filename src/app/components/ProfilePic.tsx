@@ -9,7 +9,8 @@ export function ProfilePic() {
   const changeImage = () => {
     setIsChanging(true)
     const images = [
-      "/raj_headshot_01.jpg",
+      "/my_headshot.jpeg",
+      "/raj_headshot_01_zoom.jpeg",
       "/raj_headshot_02.jpg",
       "/raj_headshot_03.jpg",
       // "/raj_headshot_04.jpg",

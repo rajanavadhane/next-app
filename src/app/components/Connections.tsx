@@ -93,7 +93,7 @@ export function Connections({ linkTo }: { linkTo?: string }): React.ReactNode {
               </svg>
               <img
                 className="absolute left-1/2 top-1/2 h-[100px] w-[100px] -translate-x-1/2 -translate-y-1/2 transform rounded-full"
-                src="/raj_headshot_02.jpg"
+                src="/raj_headshot_03.jpg"
                 alt=""
               />
             </div>

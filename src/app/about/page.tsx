@@ -1,6 +1,3 @@
-import clsx from "clsx"
-import { div } from "framer-motion/client"
-import Image from "next/image"
 import { GridWrapper } from "../components/GridWrapper"
 import { getTimeOfDayGreeting } from "../lib/utils"
 import { Photo } from "@/app/components/Photo"
@@ -33,7 +30,7 @@ export default function AboutPage() {
                     <Photo
                       width={140}
                       height={140}
-                      src="/raj_headshot_04.jpg"
+                      src="/raj_headshot_03.jpg"
                       alt="Rajan Avadhane"
                       direction="left"
                     />
@@ -42,7 +39,7 @@ export default function AboutPage() {
                     <Photo
                       width={140}
                       height={140}
-                      src="/raj_headshot_03.jpg"
+                      src="/raj_headshot_01.jpeg"
                       alt="Rajan Avadhane"
                       direction="right"
                     />
@@ -126,23 +123,14 @@ export default function AboutPage() {
           </div>
 
           <GridWrapper>
-            <div className="grid grid-cols-1 gap-2 lg:grid-cols-12">
-              <div className="lg:col-span-3 lg:row-span-6">
+            <div className="grid grid-cols-1 gap-2 lg:grid-cols-12 ">
+              <div className="lg:col-span-4 lg:row-span-4 min-h-[300px]">
                 <CurrentlyPlayingSong />
               </div>
-              {/* <div className="hidden lg:col-span-7 lg:row-span-5 lg:block">
-                <ScrapbookBento />
-              </div> */}
-              <div className="hidden lg:col-span-2 lg:col-start-11 lg:row-span-10 lg:block lg:min-h-[50px]">
+
+              <div className="lg:col-span-5 lg:row-span-5 min-h-[300px]">
                 <CurrentlyReading />
               </div>
-              {/* <div className="lg:col-span-7 lg:row-span-8">
-                <ConnectionsBento linkTo="/connections" />
-              </div> */}
-
-              {/* <div className="lg:col-span-3 lg:row-span-4">
-                <StatsBento />
-              </div> */}
             </div>
           </GridWrapper>
         </section>

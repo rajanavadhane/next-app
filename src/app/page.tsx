@@ -46,16 +46,6 @@ export default async function Home() {
               </div>
             </GridWrapper>
           </div>
-
-          <div>
-            {/* Desktop Photos */}
-            <div className="relative hidden h-fit w-full items-center justify-center lg:flex">
-              {/* <PhotoGallery animationDelay={PHOTOS_DELAY} /> */}
-            </div>
-
-            {/* Mobile Photos */}
-            {/* <AnimatedMobilePhotos delay={PHOTOS_DELAY} /> */}
-          </div>
         </section>
 
         {/* About Section */}
