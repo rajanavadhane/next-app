@@ -59,16 +59,7 @@ export default function AboutPage() {
           </div>
         </GridWrapper>
 
-        <div className="  m-5 ">
-          {/* <h1
-            className={clsx(
-              "font-bold",
-              "text-[clamp(26px,5vw,var(--fz-heading))]",
-              "m-5"
-            )}
-          >
-            About Me :
-          </h1> */}
+        <div className="m-5">
           <GridWrapper>
             <div className="ml-5 text-center text-sm font-medium text-indigo-600">
               <span>About Me :</span>
@@ -78,12 +69,12 @@ export default function AboutPage() {
           <div className="flex m-5 gap-5">
             <div>
               <h4>
-                I'm a young , prolific and growing Software Developer with a
+                I&apos a young , prolific and growing Software Developer with a
                 flair for creating elegant solutions in the least amount of
-                time. In my technical career I always believe in 3 I's: Intent,
-                Interact and Impact/Influence. I believe that if we have intent
-                for doing something, we surely can do it. With intent we can
-                build our reality . I am eager to bring my enthusiasm and
+                time. In my technical career I always believe in 3 I&apos:
+                Intent, Interact and Impact/Influence. I believe that if we have
+                intent for doing something, we surely can do it. With intent we
+                can build our reality . I am eager to bring my enthusiasm and
                 dedication to any project or team I am a part of.I am constantly
                 learning and staying up-to-date with the latest technologies.I
                 aim and work to establish myself as a BRAND in this technical

@@ -3,6 +3,7 @@
 import { MyCard } from "./MyCard"
 import { motion, useAnimation } from "framer-motion"
 import clsx from "clsx"
+import Image from "next/image"
 
 export function Connections({ linkTo }: { linkTo?: string }): React.ReactNode {
   const controls = useAnimation()
@@ -91,10 +92,12 @@ export function Connections({ linkTo }: { linkTo?: string }): React.ReactNode {
                   </filter>
                 </defs>
               </svg>
-              <img
+              <Image
                 className="absolute left-1/2 top-1/2 h-[100px] w-[100px] -translate-x-1/2 -translate-y-1/2 transform rounded-full"
                 src="/raj_headshot_03.jpg"
-                alt=""
+                alt="a headshot of Raj"
+                width={100}
+                height={100}
               />
             </div>
           </span>
@@ -156,40 +159,48 @@ export function Connections({ linkTo }: { linkTo?: string }): React.ReactNode {
               sizeClass="w-10 h-10"
               className="absolute left-4 top-6 md:left-24"
             >
-              <img
+              <Image
                 className="rounded-full"
                 src="/hitesh.avif"
                 alt="Connection"
+                width={10}
+                height={10}
               />
             </ConnectionCircle>
             <ConnectionCircle
               sizeClass="w-12 h-12"
               className="absolute bottom-20 left-14 md:left-52"
             >
-              <img
+              <Image
                 className="rounded-full"
                 src="/harry.jpeg"
                 alt="Connection"
+                width={12}
+                height={12}
               />
             </ConnectionCircle>
             <ConnectionCircle
               sizeClass="w-14 h-14"
               className="absolute right-16 top-4 md:right-52"
             >
-              <img
+              <Image
                 className="rounded-full"
                 src="/akshay_saini.jpg"
                 alt="Connection"
+                width={14}
+                height={14}
               />
             </ConnectionCircle>
             <ConnectionCircle
               sizeClass="w-11 h-11"
               className="absolute bottom-20 right-4 md:right-12"
             >
-              <img
+              <Image
                 className="rounded-full"
-                src="/piyush-garg.jpg "
+                src="/piyush-garg.jpg"
                 alt="Connection"
+                width={11}
+                height={11}
               />
             </ConnectionCircle>
           </span>

@@ -1,4 +1,8 @@
-type SoftwareDataItem = {}
+type SoftwareDataItem = {
+  title: string
+  imgSrc: string
+  link: string
+}
 
 const softwareData: SoftwareDataItem[] = [
   {

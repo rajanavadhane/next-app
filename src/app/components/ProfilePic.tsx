@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 export function ProfilePic() {
-  const [imageSrc, setImageSrc] = useState("/raj_headshot_01.jpg")
+  const [imageSrc, setImageSrc] = useState("/raj_headshot_01.jpeg")
   const [isChanging, setIsChanging] = useState(false)
 
   const changeImage = () => {

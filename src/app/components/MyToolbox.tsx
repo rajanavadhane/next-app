@@ -1,10 +1,12 @@
+import Image from "next/image"
 import { softwareData } from "../data/toolbox"
 import { MyCard } from "./MyCard"
 
 const items = softwareData
   .map((item, index) => (
-    <div key={item.title} className="group inline-block text-center">
+    <div className="group inline-block text-center">
       <div
+        key={item.title || index}
         className={`rounded-[20px] border border-border-primary p-2 transition-all duration-500 group-hover:border-indigo-400 ${
           index === 2
             ? "delay-0 group-hover:-translate-y-3"
@@ -21,7 +23,7 @@ const items = softwareData
           className="grid h-full place-items-center rounded-xl border-2 border-[#A5AEB81F]/10 bg-[#EDEEF0]"
           style={{ boxShadow: "0px 2px 1.5px 0px #A5AEB852 inset" }}
         >
-          <img className="h-10 w-10" alt={item.title} src={item.imgSrc} />
+          <Image width={40} height={40} alt={item.title} src={item.imgSrc} />
         </div>
       </div>
     </div>
