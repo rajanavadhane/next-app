@@ -35,7 +35,7 @@ const resumeData: ExperienceData = {
       ],
     },
   ],
-  avatarUrl: "/Raj_headshot_05.jpg",
+  avatarUrl: "/raj_headshot_05.jpg",
 }
 
 export function Experience() {

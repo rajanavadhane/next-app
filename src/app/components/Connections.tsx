@@ -163,8 +163,9 @@ export function Connections({ linkTo }: { linkTo?: string }): React.ReactNode {
                 className="rounded-full"
                 src="/hitesh.avif"
                 alt="Connection"
-                width={10}
-                height={10}
+                // width={10}
+                // height={10}
+                fill
               />
             </ConnectionCircle>
             <ConnectionCircle
@@ -175,8 +176,9 @@ export function Connections({ linkTo }: { linkTo?: string }): React.ReactNode {
                 className="rounded-full"
                 src="/harry.jpeg"
                 alt="Connection"
-                width={12}
-                height={12}
+                // width={12}
+                // height={12}
+                fill
               />
             </ConnectionCircle>
             <ConnectionCircle
@@ -187,8 +189,9 @@ export function Connections({ linkTo }: { linkTo?: string }): React.ReactNode {
                 className="rounded-full"
                 src="/akshay_saini.jpg"
                 alt="Connection"
-                width={14}
-                height={14}
+                fill
+                // width={14}
+                // height={14}
               />
             </ConnectionCircle>
             <ConnectionCircle
@@ -199,8 +202,9 @@ export function Connections({ linkTo }: { linkTo?: string }): React.ReactNode {
                 className="rounded-full"
                 src="/piyush-garg.jpg"
                 alt="Connection"
-                width={11}
-                height={11}
+                // width={11}
+                // height={11}
+                fill
               />
             </ConnectionCircle>
           </span>

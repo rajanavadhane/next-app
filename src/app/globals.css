@@ -5,3 +5,11 @@
 .code-frame {
   @apply flex h-9 items-center justify-between overflow-scroll rounded-t-xl border-b border-[#E2E3E5] bg-white px-4;
 }
+
+body.modal-open {
+  overflow: hidden;
+}
+
+html {
+  min-width: 360px;
+}
