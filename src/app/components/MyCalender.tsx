@@ -44,8 +44,8 @@ export function MyCalendar() {
     .padStart(2, "0")}`
 
   const renderCalendarDays = () => {
-    let days: React.ReactNode[] = [
-      ...dayNames.map((day, i) => (
+    const days: React.ReactNode[] = [
+      ...dayNames.map(day => (
         <CalendarDay key={`header-${day}`} day={day} isHeader />
       )),
       ...Array(firstDayOfWeek).map((_, i) => (

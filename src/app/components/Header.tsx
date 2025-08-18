@@ -5,6 +5,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { SocialPill } from "./SocialPill"
 import { CloseButton, Dialog, DialogPanel } from "@headlessui/react"
+import Image from "next/image"
 
 type NavigationLink = {
   name: string
@@ -40,7 +41,13 @@ function DesktopNav() {
     >
       <div className="w-[104px]">
         <Link href="/" aria-label="Home">
-          <img src="/code-solid.svg" alt="App Logo" className="h-6 w-6" />
+          <Image
+            width={6}
+            height={6}
+            src="/code-solid.svg"
+            alt="App Logo"
+            className="h-6 w-6"
+          />
         </Link>
       </div>
       <ul className="flex place-items-center space-x-4 rounded-full border border-border-primary px-5 py-2 text-sm text-gray-500">
@@ -125,7 +132,13 @@ function MobileNav() {
 const NavLogo: React.FC<NavLogoProps> = ({ onClickCallback }) => {
   return (
     <Link href="/" aria-label="Home" onClick={() => onClickCallback(false)}>
-      <img src="/code-solid.svg" alt="App Logo" className="h-6 w-6" />
+      <Image
+        width={6}
+        height={6}
+        src="/code-solid.svg"
+        alt="App Logo"
+        className="h-6 w-6"
+      />
     </Link>
   )
 }

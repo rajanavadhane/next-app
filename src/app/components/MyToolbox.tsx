@@ -4,9 +4,8 @@ import { MyCard } from "./MyCard"
 
 const items = softwareData
   .map((item, index) => (
-    <div className="group inline-block text-center">
+    <div key={item.title || index} className="group inline-block text-center">
       <div
-        key={item.title || index}
         className={`rounded-[20px] border border-border-primary p-2 transition-all duration-500 group-hover:border-indigo-400 ${
           index === 2
             ? "delay-0 group-hover:-translate-y-3"

@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { MyCard } from "./MyCard"
 
 export function CurrentlyReading() {
@@ -17,14 +18,28 @@ export function CurrentlyReading() {
 
 function BookCover() {
   return (
-    <div className="flex aspect-video h-full w-96 overflow-hidden rounded">
-      <div className="absolute left-5 h-full w-2 bg-slate-900/20 blur-sm"></div>
-      <img
-        src="/the_immortals_of_meluha.jpg"
-        alt="The Immortals of Meluha"
-        className="h-full w-[50%] "
-      />
-      <img src="/the_nagas.jpg" alt="The Nagas" className="h-full w-[50%]" />
+    <div className="flex aspect-video h-full w-96 overflow-hidden rounded relative">
+      <div className="absolute left-5 h-full w-2 bg-slate-900/20 blur-sm z-10"></div>
+
+      {/* First Image Wrapper */}
+      <div className="relative w-1/2 h-full">
+        <Image
+          src="/the_immortals_of_meluha.jpg"
+          alt="The Immortals of Meluha"
+          fill
+          className="object-cover"
+        />
+      </div>
+
+      {/* Second Image Wrapper */}
+      <div className="relative w-1/2 h-full">
+        <Image
+          src="/the_nagas.jpg"
+          alt="The Nagas"
+          fill
+          // className="object-contain"
+        />
+      </div>
     </div>
   )
 }

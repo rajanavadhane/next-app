@@ -15,7 +15,7 @@ export function Timeline({ avatarUrl }: TimelineProps) {
     offset: ["end 50%", "start 50%"],
   })
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
+  // const y = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
 
   return (
     <div ref={containerRef} className="relative h-full w-full">

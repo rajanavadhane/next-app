@@ -10,7 +10,7 @@ export default async function Home() {
   const PROFILE_DELAY = 0
   const HEADING_DELAY = PROFILE_DELAY + 0.2
   const PARAGRAPH_DELAY = HEADING_DELAY + 0.1
-  const PHOTOS_DELAY = PARAGRAPH_DELAY + 0.1
+  // const PHOTOS_DELAY = PARAGRAPH_DELAY + 0.1
 
   return (
     <section>
@@ -38,8 +38,8 @@ export default async function Home() {
                   I&apos;m a front-end developer with a habit of pushing pixels
                   and breaking things—lovingly. This site is where I test ideas,
                   collect inspiration, and build without a roadmap. If something
-                  looks off... it's probably a feature, not a bug. This isn’t
-                  just a portfolio—it’s a code lab, a journal, and a
+                  looks off... it&apos;s probably a feature, not a bug. This
+                  isn’t just a portfolio—it’s a code lab, a journal, and a
                   never-ending commit history. Things get updated, undone, and
                   sometimes overengineered for no reason other than fun.
                 </AnimatedText>

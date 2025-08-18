@@ -2,7 +2,7 @@
 
 import { Ref, forwardRef, useState, useEffect } from "react"
 import Image, { ImageProps } from "next/image"
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion"
+import { motion, useMotionValue } from "framer-motion"
 import { cn } from "../lib/utils"
 import { getRandomNumberInRange } from "@/app/lib/getRandomNumberInRange"
 
@@ -11,7 +11,7 @@ const MotionImage = motion(
     props: ImageProps,
     ref: Ref<HTMLImageElement>
   ) {
-    return <Image ref={ref} {...props} />
+    return <Image ref={ref} {...props} alt="headshot pictures" />
   })
 )
 type Direction = "left" | "right"
