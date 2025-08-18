@@ -6,6 +6,7 @@ import "./globals.css"
 import { BgGradient } from "./components/BgGradient"
 import { Footer } from "./components/Footer"
 import Script from "next/script"
+import { cx } from "./lib/utils"
 
 export const metadata: Metadata = {
   title: "rajanavadhane.dev",
@@ -25,7 +26,11 @@ export default function RootLayout({
       className={`bg-bg-primary ${GeistMono.variable} ${GeistSans.variable}`}
     >
       <body className="flex min-h-screen flex-col font-sans md:max-w-7xl lg:mx-auto lg:flex-row">
-        <main>
+        <main
+          className={cx(
+            "relative flex flex-1 flex-col overflow-x-hidden border-x border-border-primary/50"
+          )}
+        >
           <Header />
 
           <div className="grid flex-1 grid-cols-1 lg:grid-cols-[32px_1fr_32px]">
