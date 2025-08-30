@@ -69,9 +69,9 @@ export default function AboutPage() {
           <div className="flex m-5 gap-5">
             <div>
               <h4>
-                I&apos a young , prolific and growing Software Developer with a
-                flair for creating elegant solutions in the least amount of
-                time. In my technical career I always believe in 3 I&apos:
+                I&apos;m a young , prolific and growing Software Developer with
+                a flair for creating elegant solutions in the least amount of
+                time. In my technical career I always believe in 3 I&apos;s
                 Intent, Interact and Impact/Influence. I believe that if we have
                 intent for doing something, we surely can do it. With intent we
                 can build our reality . I am eager to bring my enthusiasm and

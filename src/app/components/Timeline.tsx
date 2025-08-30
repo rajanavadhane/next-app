@@ -18,7 +18,7 @@ export function Timeline({ avatarUrl }: TimelineProps) {
   // const y = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
 
   return (
-    <div ref={containerRef} className="relative h-full w-full">
+    <div ref={containerRef} className="relative overflow-y-hidden w-full">
       <motion.div
         className="absolute -left-0.5 z-10 flex"
         style={{
